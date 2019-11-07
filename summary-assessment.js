@@ -57,11 +57,20 @@ function each(coll, f) {
   //containing the length of each word in that string.
   //solve it using the most appropriate helper functions(reduce,each,map,filter).
   //wordLengths("hello its me") // [5,3,2]
-  
+
+  /*pseudo-code
+  split the string by ' '
+  this will rceat an array of strings
+  atterate and on the new array and push the length of each word into new array of lengths.
+  */
   function wordLengths(str) {
-      // TODO: your code here 
+      var arr = str.split(' ');
+      var wordLen = [];
+      for(var i = 0; i<arr.length; i++){
+      		wordLen.push(arr[i].length)
+      	}
+      return wordLen;
   }
-  
   //=============================================================================
   /*                                  Q2                                    */
   //=============================================================================
@@ -73,8 +82,20 @@ function each(coll, f) {
   
   function countOccurrences(string, character) {
       // your code is here
+      var arr = string.split('')
+     // console.log(arr)
+     var count = 0;
+     for (var i = 0; i< arr.length; i++){
+     		if(arr[i] == character){
+     			count = count + 1; 
+     		}
+     }
+     return count;
   }
   
+  // note: this function it is case sensative.
+
+
   //=============================================================================
   /*                                  Q3                                    */
   //=============================================================================
@@ -84,9 +105,17 @@ function each(coll, f) {
   // wordsLongerThanThree("Hello Mad World") //["Hello", "World"]
   
   function wordsLongerThanThree(str) {
-      // TODO: your code here 
+      // TODO: your code here
+      var arr = str.split(' ');
+      var longerThanThree = [];
+
+      for(var i = 0; i<arr.length; i++){
+      		if(arr[i].length > 3){
+      			longerThanThree.push(arr[i])
+      		}
+      	}
+      return longerThanThree;
   }
-  
   //=============================================================================
   /*                                  Q4                                        */
   //=============================================================================
@@ -99,10 +128,16 @@ function each(coll, f) {
   //repeatString('dog', 3); // => 'dog' + 'dog' + 'dog' => 'dogdogdog'
   
   function repeatString(str, count) { 
-   // TODO: your code here 
+   // TODO: your code here
+   var repeated = "";
+
+   	for(var i = 0; i< count; i++){
+   		repeated = repeated + str + ' ';
+   	} 
+
+   	return repeated;
   } 
-   
-  
+
   //=============================================================================
   /*                                  Q5                                       */
   //=============================================================================
@@ -130,6 +165,17 @@ function each(coll, f) {
   
   // Write your code here .....
   
+
+
+
+function makePizza(type, size, numOfSlice) {
+  return function addIngredients(Ingredients) {
+    return type + size + numOfSlice + Ingredients;
+  };
+}
+
+
+
   //=============================================================================
   /*                                  Q6                                      */
   //=============================================================================
@@ -215,11 +261,43 @@ function each(coll, f) {
   /*                              Q10                                           */
   //================================================================================
   // Theoretical questions.
+ 
+
   // 1- In your own words,Why do we use Closures ?
+  /*
+	function in function to eliminate  using global varibals
+
+
+
+
+	*/
   
+
+
   // 2- In OOP, what does "this" refer to ?
   
-  // 3- What is jQuery?
+  /*
+
+
+
+
+
+
+  */
+
   
+
+
+
+  // 3- What is jQuery?
+
+  /*jQuery is a library 
+  	this lobrary inable us to use less codes
+  */
   // 4- what is the diffrence between Closure's methods and The OOP's methods?
+  /*
+  diffrence between Closure's methods and The OOP's methods
+  oop we use this.
+  */
+  
   
